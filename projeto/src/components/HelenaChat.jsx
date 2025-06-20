@@ -90,9 +90,13 @@ function HelenaChat() {
 
       {/* Chat Interface */}
       {isOpen && (
+        // CORREÇÃO FINAL APLICADA AQUI
         <div
           id="chat-container"
-          className="fixed bottom-20 right-6 w-full max-w-md bg-white rounded-xl shadow-[0_8px_24px_rgba(0,0,0,0.15)] flex flex-col z-50 max-h-[calc(100vh-100px)]"
+          className="fixed z-50 bottom-0 inset-x-0 rounded-t-xl
+                     md:inset-x-auto md:bottom-20 md:right-6 md:w-full md:max-w-md md:rounded-xl
+                     bg-white shadow-[0_8px_24px_rgba(0,0,0,0.15)] flex flex-col
+                     max-h-[85vh] md:max-h-[600px]"
           role="region"
           aria-label="Chatbot Helena - Assistente Psicopedagógica"
         >
@@ -161,11 +165,18 @@ function HelenaChat() {
               >
                 {sender === 'helena' && (
                   <img
-                    className="avatar w-9 h-9 rounded-full flex-shrink-0"
-                    src="https://i.imgur.com/2b7a0sQ.png"
-                    alt="Avatar de Helena"
-                    loading="lazy"
-                  />
+                src="/assets/helenaIA.png"
+                alt="Ícone da assistente virtual Helena"
+                width={40}
+                height={40}
+                className="rounded-full flex-shrink-0"
+                loading="lazy"
+                onError={(e) => {
+                    console.error('Erro ao carregar helenaIA.png:', e.target.src);
+                    e.target.src = '/helenaIA.png'; // Tente a raiz do public/
+                    e.target.onerror = null; // Evita loop infinito
+                }}
+          />
                 )}
                 <div
                   className={
