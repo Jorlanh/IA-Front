@@ -6,7 +6,7 @@ function HelenaChat() {
   const [messages, setMessages] = useState([
     {
       id: 1,
-      sender: 'lia',
+      sender: 'HELENA',
       text: 'Olá! Eu sou Helena, uma inteligência artificial especialista em avaliação psicopedagógica.<br><br>Eu atuo com base em regras de avaliação psicopedagógica, levando em consideração indícios de dislexia, dificuldade com leitura, interpretação de texto, escrita, raciocínio lógico e matemática básica. Em que posso te ajudar hoje?',
     },
   ]);
@@ -43,7 +43,7 @@ function HelenaChat() {
     addMessage(label, 'user');
     setIsTyping(true);
     const apiResponse = await sendMessage(response);
-    addMessage(apiResponse, 'lia');
+    addMessage(apiResponse, 'HELENA');
     setIsTyping(false);
   };
 
@@ -54,7 +54,7 @@ function HelenaChat() {
     setInput('');
     setIsTyping(true);
     const apiResponse = await sendMessage(userInput);
-    addMessage(apiResponse, 'lia');
+    addMessage(apiResponse, 'HELENA');
     setIsTyping(false);
   };
 
@@ -70,22 +70,22 @@ function HelenaChat() {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="fixed bottom-6 right-6 flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 z-50"
-        aria-label="Abrir/Fechar Chat com LIA"
+        aria-label="Abrir/Fechar Chat com HELENA"
       >
         <img
           src="/assets/helenaIA.png"
-          alt="Ícone da assistente virtual LIA"
+          alt="Ícone da assistente virtual HELENA"
           width={40}
           height={40}
           className="rounded-full flex-shrink-0"
           loading="lazy"
           onError={(e) => {
-            console.error('Erro ao carregar Lia-ChatBot.jpeg:', e.target.src);
+            console.error('Erro ao carregar helenaIA.png:', e.target.src);
             e.target.src = '/helenaIA.png'; // Tente a raiz do public/
             e.target.onerror = null; // Evita loop infinito
           }}
           />
-        <span className="text-sm font-semibold">assistente LIA</span>
+        <span className="text-sm font-semibold">assistente HELENA</span>
       </button>
 
       {/* Chat Interface */}
@@ -94,7 +94,7 @@ function HelenaChat() {
           id="chat-container"
           className="fixed bottom-20 right-6 w-full max-w-md h-[600px] bg-white rounded-xl shadow-[0_8px_24px_rgba(0,0,0,0.15)] flex flex-col overflow-hidden z-50"
           role="region"
-          aria-label="Chatbot LIA - Assistente Psicopedagógica"
+          aria-label="Chatbot HELENA - Assistente Psicopedagógica"
         >
           <header
             id="chat-header"
@@ -103,20 +103,20 @@ function HelenaChat() {
             <div className="flex items-center gap-4">
               <img
                 src="/assets/helenaIA.png"
-                alt="Ícone da assistente virtual LIA"
+                alt="Ícone da assistente virtual HELENA"
                 width={40}
                 height={40}
                 className="rounded-full flex-shrink-0"
                 loading="lazy"
                 onError={(e) => {
-                    console.error('Erro ao carregar Lia-ChatBot.jpeg:', e.target.src);
+                    console.error('Erro ao carregar helenaIA.png:', e.target.src);
                     e.target.src = '/helenaIA.png'; // Tente a raiz do public/
                     e.target.onerror = null; // Evita loop infinito
                 }}
           />
               <div className="flex flex-col">
                 <span className="font-bold text-lg leading-none select-none">
-                  LIA
+                  HELENA
                 </span>
                 <span className="text-sm opacity-90 select-none">
                   Assistente Psicopedagógica
@@ -154,23 +154,23 @@ function HelenaChat() {
                 key={id}
                 className={
                   'message max-w-[85%] flex items-start gap-3 ' +
-                  (sender === 'lia' ? 'self-start' : 'self-end flex-row-reverse')
+                  (sender === 'HELENA' ? 'self-start' : 'self-end flex-row-reverse')
                 }
                 role="article"
-                aria-label={sender === 'lia' ? 'Mensagem da LIA' : 'Sua mensagem'}
+                aria-label={sender === 'HELENA' ? 'Mensagem da HELENA' : 'Sua mensagem'}
               >
-                {sender === 'lia' && (
+                {sender === 'HELENA' && (
                   <img
                     className="avatar w-9 h-9 rounded-full flex-shrink-0"
                     src="https://i.imgur.com/2b7a0sQ.png"
-                    alt="Avatar da LIA"
+                    alt="Avatar da HELENA"
                     loading="lazy"
                   />
                 )}
                 <div
                   className={
                     'text-bubble p-3 rounded-[18px] text-sm leading-relaxed whitespace-pre-wrap break-words ' +
-                    (sender === 'lia'
+                    (sender === 'HELENA'
                       ? 'bg-gray-200 text-gray-800'
                       : 'bg-blue-200 text-gray-900')
                   }
@@ -183,7 +183,7 @@ function HelenaChat() {
                 <img
                   className="avatar w-9 h-9 rounded-full"
                   src="https://i.imgur.com/2b7a0sQ.png"
-                  alt="Avatar da LIA"
+                  alt="Avatar da HELENA"
                 />
                 <div className="text-bubble bg-gray-200 text-gray-800 p-3 rounded-[18px]">
                   Digitando...
