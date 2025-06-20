@@ -127,7 +127,8 @@ function Solution() {
             O Que a IA Pode Identificar?
           </h4>
           <div className="max-w-4xl mx-auto">
-            <div className="border-b border-gray-200">
+            {/* CORREÇÃO APLICADA AQUI */}
+            <div className="border-b border-gray-200 overflow-x-auto">
               <nav
                 id="tabs"
                 className="-mb-px flex space-x-6"

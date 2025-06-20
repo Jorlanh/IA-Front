@@ -69,7 +69,7 @@ function HelenaChat() {
       {/* Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 z-50"
+        className="fixed bottom-6 right-6 flex items-center justify-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 z-50"
         aria-label="Abrir/Fechar Chat com Helena"
       >
         <img
@@ -85,7 +85,7 @@ function HelenaChat() {
             e.target.onerror = null; // Evita loop infinito
           }}
           />
-        <span className="text-sm font-semibold">assistente HELENA</span>
+        <span className="text-sm font-semibold">assistente Helena</span>
       </button>
 
       {/* Chat Interface */}
