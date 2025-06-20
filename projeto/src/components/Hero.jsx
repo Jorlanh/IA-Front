@@ -15,9 +15,9 @@ function Hero() {
         <div className="mt-8 text-sm text-gray-500">
           <p className="font-semibold mb-2">Autores do Projeto:</p>
           <p className="max-w-2xl mx-auto">
-            Anna Luíza Moreira de Oliveira, Ana Paula Ramos Andrade 
-            Flávio Cerqueira da Silva, Jorlan Heider Da Fé Santos 
-            Maria Eduarda Souto Vasconcelos, Maria Fernanda Prandi Quintella Nunes 
+            Anna Luíza Moreira de Oliveira, Ana Paula Ramos Andrade, 
+            Flávio Cerqueira da Silva, Jorlan Heider Da Fé Santos, 
+            Maria Eduarda Souto Vasconcelos, Maria Fernanda Prandi Quintella Nunes, 
             Miquéias Ferreira de Jesus Santos, Rafael Rodrigues Santos e Victor da Rocha 
           </p>
         </div>
