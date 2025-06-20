@@ -1,4 +1,6 @@
-const BASE_URL = 'http://localhost:8080';
+// Use a variável de ambiente REACT_APP_API_URL que será configurada no Render.
+// Para desenvolvimento local, ele usará o valor do seu arquivo .env.development ou o fallback.
+const BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8080';
 
 export const sendMessage = async (message) => {
   try {
@@ -7,17 +9,17 @@ export const sendMessage = async (message) => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ text: message }),
+      body: JSON.stringify({ message }),
     });
 
     if (!response.ok) {
-      throw new Error('Network response was not ok');
+      throw new Error('A resposta da rede não foi boa');
     }
 
     const data = await response.json();
-    return data.response; // Assuming HelenaResponse has a 'response' field
+    return data.responseText;
   } catch (error) {
-    console.error('Error sending message:', error);
+    console.error('Erro ao enviar mensagem:', error);
     return 'Desculpe, houve um erro ao processar sua solicitação.';
   }
 };
